@@ -1,0 +1,10 @@
+#!/bin/bash
+set -e
+
+export MYSQL_BIN=`which mysql`
+export MYSQL_DUMP_BIN=`which mysqldump`
+export MYSQL_ROOT_USER=""
+export MYSQL_ROOT_PASS=""
+export MYSQL_URL=""
+
+env | grep MYSQL
