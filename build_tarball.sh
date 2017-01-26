@@ -12,7 +12,7 @@ if [ "$?" -ne "0" ] ; then
 fi
 
 # Build
-declare -a TARGETS=(darwin linux solaris freebsd)
+declare -a TARGETS=(darwin linux solaris freebsd, windows)
 for target in ${TARGETS[@]} ; do
   output="mysql-minion-${target}"
   echo "Building for ${target}, output bin/${output}"
