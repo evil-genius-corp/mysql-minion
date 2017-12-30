@@ -1,14 +1,16 @@
 package main
 
-import "fmt"
-import "os"
+import (
+	"fmt"
+	"mysql-minion/mysql"
+	"mysql-minion/utils"
+)
 
+var mysqlDumpBin string
 
 func main() {
-	keys :=[]string{"MYSQL_BIN", "MYSQL_DUMP_BIN"}
 
-	for i := 0; i < len(keys); i += 1 {
-		fmt.Println(keys[i], ":", os.Getenv(keys[i]))
-	}
+	creds := &utils.Creds{User: "play_mediadb", Password: "play_mediadb", Host: "localhost"}
+	fmt.Printf("creds: %#v", creds)
+	mysql.ShowTables(creds, "play_mediadb")
 }
-
